@@ -1,0 +1,111 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+scalar Date
+
+interface Media {
+    id: ID!
+    name: String!
+    url: String!
+}
+
+# if implemented, needs to only return data within the date range (if range is provided)
+interface DateRestricted {
+    dateStart: Date
+    dateEnd: Date
+}
+
+type Video implements Media, DateRestricted {
+    id: ID!
+    name: String!
+    url: String!
+    dateStart: Date
+    dateEnd: Date
+}
+
+type Music implements Media, DateRestricted {
+    id: ID!
+    name: String!
+    url: String!
+    dateStart: Date
+    dateEnd: Date
+}
+
+type Query {
+    #music
+    musicById(id: ID) : Music
+    allMusic() : [Music]
+    #video
+    videoById(id: ID) : Video
+    allVideos() : [Video]
+}
+
+# type Benefit {
+#     id: ID!
+#     name: String!
+#     slug: String
+# }
+
+# type User {
+#     id: ID!
+#     name: String!
+#     benefits: [Benefit!]
+# }
+
+# type Category {
+#     id: ID!
+#     name: String!
+#     slug: String
+#     music: [Music!]
+#     videos: [Video!]
+# }
+
+# type Query {
+#     #music
+#     musicById(id: ID) : Music
+#     allMusic() : [Music]
+#     #video
+#     videoById(id: ID) : Video
+#     allVideos() : [Video]
+#     #category
+#     categoryBySlug(slug: String) : Category
+#     allCategories() : [Category]
+# }
+
+# type MusicBenefit {
+#     id: ID!,
+#     musicId: ID!,
+#     benefitId: ID!
+# }
+
+# type VideoBenefit {
+#     id: ID!,
+#     videoId: ID!,
+#     benefitId: ID!
+# }
+
+# type UserBenefit {
+#     id: ID!,
+#     userId: ID!,
+#     benefitId: ID!
+# }
+
+# type Mutation {
+#     createMusic(id: ID!, name: String!, url: String!) : Music
+#     updateMusic(id: ID!, name: String, url: String, dateStart: Date, dateEnd: Date) : Music
+#     deleteMusic(id: ID!)
+
+#     createVideo(id: ID!, name: String!, url: String!) : Video
+#     updateVideo(id: ID!, name: String, url: String, dateStart: Date, dateEnd: Date) : Video
+#     deleteVideo(id: ID!)
+
+#     createBenefit(id: ID!, name: String!, slug: String) : Benefit
+#     updateBenefit(id: ID!, name: String!, slug: String) : Benefit
+#     deleteBenefit(id: ID!)
+
+#     connectBenefitToMusic(benefitId: ID!, musicId: ID!) : MusicBenefit
+#     connectBenefitToVideo(benefitId: ID!, videoId: ID!) : VideoBenefit
+#     connectBenefitToUser(benefitId: ID!, userId: ID!) : UserBenefit
+# }
