@@ -1,10 +1,16 @@
 {
     "require": {
-        "webonyx/graphql-php": "^0.12.5"
+        "webonyx/graphql-php": "^0.12.5",
+        "doctrine/orm": "2.5.*",
+        "symfony/yaml": "2.*",
+        "ecodev/graphql-doctrine": "^4.0"
     },
     "autoload": {
         "psr-4": {
             "MyApp\\": "src/"
+        },
+        "psr-0": {
+            "": "src/"
         }
     }
 }

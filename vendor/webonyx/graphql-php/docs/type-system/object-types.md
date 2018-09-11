@@ -13,8 +13,8 @@ namespace MyApp;
 
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\Type;
-use GraphQL\Blog\Data\DataSource;
-use GraphQL\Blog\Data\Story;
+use GraphQL\Examples\Blog\Data\DataSource;
+use GraphQL\Examples\Blog\Data\Story;
 
 $userType = new ObjectType([
     'name' => 'User',

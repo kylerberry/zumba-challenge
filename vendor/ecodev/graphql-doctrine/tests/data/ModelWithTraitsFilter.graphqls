@@ -1,0 +1,130 @@
+schema {
+  query: query
+  mutation: mutation
+}
+
+input BetweenOperatorID {
+  from: ID!
+  to: ID!
+  not: Boolean = false
+}
+
+input EqualOperatorID {
+  value: ID!
+  not: Boolean = false
+}
+
+input GreaterOperatorID {
+  value: ID!
+  not: Boolean = false
+}
+
+input GreaterOrEqualOperatorID {
+  value: ID!
+  not: Boolean = false
+}
+
+"""
+Will apply a `GROUP BY` on the field to select unique values existing in database.
+
+This is typically useful to present a list of suggestions to the end-user, while
+still allowing him to enter arbitrary values.
+"""
+input GroupOperatorID {
+  """This field is never used and can be ignored"""
+  value: Boolean = null
+}
+
+input InOperatorID {
+  values: [ID!]!
+  not: Boolean = false
+}
+
+input LessOperatorID {
+  value: ID!
+  not: Boolean = false
+}
+
+input LessOrEqualOperatorID {
+  value: ID!
+  not: Boolean = false
+}
+
+input LikeOperatorID {
+  value: ID!
+  not: Boolean = false
+}
+
+"""Logical operator to be used in conditions"""
+enum LogicalOperator {
+  AND
+  OR
+}
+
+"""To be used as a filter for objects of type `ModelWithTraits`"""
+input ModelWithTraitsFilter {
+  groups: [ModelWithTraitsFilterGroup!]
+}
+
+"""Specify a set of joins and conditions to filter `ModelWithTraits`"""
+input ModelWithTraitsFilterGroup {
+  """The logic operator to be used to append this group"""
+  groupLogic: LogicalOperator = AND
+
+  """The logic operator to be used within all conditions in this group"""
+  conditionsLogic: LogicalOperator = AND
+
+  """
+  Optional joins to either filter the query or fetch related objects from DB in a single query
+  """
+  joins: ModelWithTraitsFilterGroupJoin
+
+  """Conditions to be applied on fields"""
+  conditions: [ModelWithTraitsFilterGroupCondition!]
+}
+
+"""Type to specify conditions on fields"""
+input ModelWithTraitsFilterGroupCondition {
+  id: ModelWithTraitsFilterGroupConditionId
+  customFromTrait: ModelWithTraitsFilterGroupConditionCustomFromTrait
+}
+
+"""Type to specify a condition on a specific field"""
+input ModelWithTraitsFilterGroupConditionCustomFromTrait {
+  search: SearchOperatorString
+}
+
+"""Type to specify a condition on a specific field"""
+input ModelWithTraitsFilterGroupConditionId {
+  between: BetweenOperatorID
+  equal: EqualOperatorID
+  greater: GreaterOperatorID
+  greaterOrEqual: GreaterOrEqualOperatorID
+  in: InOperatorID
+  less: LessOperatorID
+  lessOrEqual: LessOrEqualOperatorID
+  like: LikeOperatorID
+  null: NullOperatorID
+  group: GroupOperatorID
+}
+
+"""Type to specify join tables in a filter"""
+input ModelWithTraitsFilterGroupJoin {
+
+}
+
+input NullOperatorID {
+  not: Boolean = false
+}
+
+input SearchOperatorString {
+  term: String!
+}
+
+type mutation {
+  defaultField: ModelWithTraitsFilter
+}
+
+type query {
+
+}

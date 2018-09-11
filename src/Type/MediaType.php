@@ -1,8 +1,8 @@
 <?php
 namespace MyApp\Type;
 
+use MyApp\Types;
 use GraphQL\Type\Definition\InterfaceType;
-use GraphQL\Type\Definition\Type;
 
 class MediaType extends InterfaceType
 {
@@ -11,7 +11,7 @@ class MediaType extends InterfaceType
         $config = [
             'name' => 'Media',
             'fields' => [
-                'url' => Type::String()
+                'url' => Types::string()
             ]
         ];
         parent::__construct($config);

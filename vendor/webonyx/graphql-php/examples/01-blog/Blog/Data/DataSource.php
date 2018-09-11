@@ -1,5 +1,5 @@
 <?php
-namespace GraphQL\Blog\Data;
+namespace GraphQL\Examples\Blog\Data;
 
 /**
  * Class DataSource
@@ -7,7 +7,7 @@ namespace GraphQL\Blog\Data;
  * This is just a simple in-memory data holder for the sake of example.
  * Data layer for real app may use Doctrine or query the database directly (e.g. in CQRS style)
  *
- * @package GraphQL\Blog
+ * @package GraphQL\Examples\Blog
  */
 class DataSource
 {

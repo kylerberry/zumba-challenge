@@ -1,0 +1,12 @@
+- Graphql
+- Doctrine ORM
+- Doctrine notations create type gql definitions using graphql-doctrine
+
+Pros:
+    - strict typing and development flow
+    - client drives query, and graphql returns least-possible data, efficient queries for various clients (web, native apps, etc.)
+    - ORM DataMapper pattern: separation of data and persistence (focus on working with objects)
+    - Graphql could be used as a gateway to existing service APIs (unifying endpoint)
+Cons:
+    - Caching is difficult
+    - 

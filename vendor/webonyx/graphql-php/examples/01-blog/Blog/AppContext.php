@@ -1,13 +1,13 @@
 <?php
-namespace GraphQL\Blog;
+namespace GraphQL\Examples\Blog;
 
-use GraphQL\Blog\Data\User;
+use GraphQL\Examples\Blog\Data\User;
 
 /**
  * Class AppContext
  * Instance available in all GraphQL resolvers as 3rd argument
  *
- * @package GraphQL\Blog
+ * @package GraphQL\Examples\Blog
  */
 class AppContext
 {

@@ -1,9 +1,9 @@
 <?php
-namespace GraphQL\Blog\Type;
+namespace GraphQL\Examples\Blog\Type;
 
-use GraphQL\Blog\AppContext;
-use GraphQL\Blog\Data\Image;
-use GraphQL\Blog\Types;
+use GraphQL\Examples\Blog\AppContext;
+use GraphQL\Examples\Blog\Data\Image;
+use GraphQL\Examples\Blog\Types;
 use GraphQL\Type\Definition\EnumType;
 use GraphQL\Type\Definition\ObjectType;
 

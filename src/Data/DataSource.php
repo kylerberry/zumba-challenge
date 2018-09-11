@@ -1,7 +1,7 @@
 <?php
 namespace MyApp\Data;
 
-use MyApp\Model\Music;
+use MyApp\Entity\Music;
 
 class DataSource
 {

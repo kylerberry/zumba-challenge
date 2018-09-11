@@ -3,7 +3,7 @@
 // php -S localhost:8080 ./graphql.php
 require_once __DIR__ . '/vendor/autoload.php';
 
-use MyApp\TypeRegistry;
+use MyApp\Types;
 use MyApp\Data\DataSource;
 use MyApp\AppContext;
 
@@ -13,7 +13,7 @@ use GraphQL\Error\FormattedError;
 use GraphQL\Error\Debug;
 
 // Disable default PHP error reporting - we have better one for debug mode (see below)
-ini_set('display_errors', 0);
+// ini_set('display_errors', 0);
 
 $debug = true;
 if (!empty($_GET['debug'])) {
@@ -50,10 +50,10 @@ try {
 
     // GraphQL schema to be passed to query executor:
     $schema = new Schema([
-        'query' => TypeRegistry::query()
+        'query' => Types::query()
     ]);
 
-    // var_dump(TypeRegistry::music()); die;
+    // var_dump(Types::music()); die;
 
     $result = GraphQL::executeQuery(
         $schema,

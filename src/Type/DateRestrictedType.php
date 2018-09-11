@@ -2,7 +2,7 @@
 namespace MyApp\Type;
 
 use GraphQL\Type\Definition\InterfaceType;
-use GraphQL\Type\Definition\Type;
+use MyApp\Types;
 
 class DateRestrictedType extends InterfaceType
 {
@@ -11,8 +11,8 @@ class DateRestrictedType extends InterfaceType
         $config = [
             'name' => 'DateRestricted',
             'fields' => [
-                'dateFrom' => Type::String(),
-                'dateTo' => Type::String(),
+                'dateFrom' => Types::string(),
+                'dateTo' => Types::string(),
             ]
         ];
         parent::__construct($config);

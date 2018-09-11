@@ -1,10 +1,10 @@
 <?php
-namespace GraphQL\Blog\Type;
+namespace GraphQL\Examples\Blog\Type;
 
-use GraphQL\Blog\AppContext;
-use GraphQL\Blog\Data\DataSource;
-use GraphQL\Blog\Data\User;
-use GraphQL\Blog\Types;
+use GraphQL\Examples\Blog\AppContext;
+use GraphQL\Examples\Blog\Data\DataSource;
+use GraphQL\Examples\Blog\Data\User;
+use GraphQL\Examples\Blog\Types;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 

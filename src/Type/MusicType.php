@@ -1,11 +1,9 @@
 <?php
 namespace MyApp\Type;
 
-use MyApp\Type\MediaType;
-use MyApp\TypeRegistry;
+use MyApp\Types;
 
 use GraphQL\Type\Definition\ObjectType;
-use GraphQL\Type\Definition\Type;
 
 class MusicType extends ObjectType {
 
@@ -13,14 +11,14 @@ class MusicType extends ObjectType {
         $config = [
             'fields' => [
                 'id' => Type::id(),
-                'name' => Type::String(),
-                'url' => Type::String(),
-                'dateStart' => Type::String(),
-                'dateEnd' => Type::String()
+                'name' => Type::string(),
+                'url' => Type::string(),
+                'dateStart' => Type::string(),
+                'dateEnd' => Type::string()
             ],
             'interfaces' => [
-                TypeRegistry::media(),
-                TypeRegistry::dateRestricted(),
+                Types::media(),
+                Types::dateRestricted(),
             ]
         ];
         parent::__construct($config);

@@ -1,5 +1,5 @@
 <?php
-namespace GraphQL\Blog\Type\Scalar;
+namespace GraphQL\Examples\Blog\Type\Scalar;
 
 use GraphQL\Error\Error;
 use GraphQL\Language\AST\StringValueNode;

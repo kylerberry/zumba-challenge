@@ -1,18 +1,18 @@
 <?php
-namespace GraphQL\Blog;
+namespace GraphQL\Examples\Blog;
 
-use GraphQL\Blog\Type\CommentType;
-use GraphQL\Blog\Type\Enum\ContentFormatEnum;
-use GraphQL\Blog\Type\Enum\ImageSizeEnumType;
-use GraphQL\Blog\Type\Field\HtmlField;
-use GraphQL\Blog\Type\SearchResultType;
-use GraphQL\Blog\Type\NodeType;
-use GraphQL\Blog\Type\QueryType;
-use GraphQL\Blog\Type\Scalar\EmailType;
-use GraphQL\Blog\Type\StoryType;
-use GraphQL\Blog\Type\Scalar\UrlType;
-use GraphQL\Blog\Type\UserType;
-use GraphQL\Blog\Type\ImageType;
+use GraphQL\Examples\Blog\Type\CommentType;
+use GraphQL\Examples\Blog\Type\Enum\ContentFormatEnum;
+use GraphQL\Examples\Blog\Type\Enum\ImageSizeEnumType;
+use GraphQL\Examples\Blog\Type\Field\HtmlField;
+use GraphQL\Examples\Blog\Type\SearchResultType;
+use GraphQL\Examples\Blog\Type\NodeType;
+use GraphQL\Examples\Blog\Type\QueryType;
+use GraphQL\Examples\Blog\Type\Scalar\EmailType;
+use GraphQL\Examples\Blog\Type\StoryType;
+use GraphQL\Examples\Blog\Type\Scalar\UrlType;
+use GraphQL\Examples\Blog\Type\UserType;
+use GraphQL\Examples\Blog\Type\ImageType;
 use GraphQL\Type\Definition\ListOfType;
 use GraphQL\Type\Definition\NonNull;
 use GraphQL\Type\Definition\Type;
@@ -25,7 +25,7 @@ use GraphQL\Type\Definition\Type;
  * As simplistic as possible for the sake of clarity of this example.
  * Your own may be more dynamic (or even code-generated).
  *
- * @package GraphQL\Blog
+ * @package GraphQL\Examples\Blog
  */
 class Types
 {
